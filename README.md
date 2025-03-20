@@ -1,35 +1,122 @@
-# Clustering Countries for Development Aid
+# 🌍 **Clustering Countries for Development Aid**  
 
-## Project Overview
-This project utilizes unsupervised learning techniques to categorize countries based on critical socio-economic and health metrics. The analysis is part of an initiative for HELP International, an NGO dedicated to combating poverty and providing essential support in underprivileged regions.
+## **1. Introduction**  
+Economic and health disparities significantly impact global development, requiring targeted aid distribution. This project leverages **unsupervised learning** to **identify countries in dire need of development aid**, helping NGOs like **HELP International** allocate resources efficiently.  
 
-## Dataset
-The dataset used for this analysis was sourced from [Kaggle](https://www.kaggle.com/), providing a comprehensive view of the socio-economic and health landscape across different countries.
+✅ **Applies KMeans clustering** to group countries based on socio-economic indicators.  
+✅ **Uses PCA for dimensionality reduction**, ensuring efficient data analysis.  
+✅ **Provides actionable insights** for targeted humanitarian assistance.  
 
-### Key Features of the Dataset
-- **country**: Name of the country
-- **child_mort**: Death of children under 5 years of age per 1000 live births
-- **exports**: Exports of goods and services per capita as a percentage of GDP per capita
-- **health**: Total health spending per capita as a percentage of GDP
-- **imports**: Imports of goods and services per capita as a percentage of GDP per capita
-- **income**: Net income per person
-- **inflation**: Annual growth rate of total GDP
-- **life_expec**: Average lifespan of a newborn child given current mortality patterns
-- **total_fer**: Number of children each woman would bear if current age-fertility rates remain unchanged
-- **gdpp**: GDP per capita, calculated as total GDP divided by the total population
+This project offers a **data-driven approach** to **prioritizing international aid efforts** effectively.  
 
-## Objective
-To identify countries in the direst need of aid by analyzing various socio-economic and health factors that determine overall development.
+---
 
-## Methodology
-1. **Data Preprocessing**: Log transformations were applied to certain features to manage skewness.
-2. **Dimensionality Reduction**: PCA was utilized to reduce the dataset while retaining 95% of the variance.
-3. **Clustering**: KMeans clustering was employed to identify patterns within the data. The optimal number of clusters was determined, and clustering quality was evaluated using silhouette scores and the Davies-Bouldin index.
-4. **Results**: Identified 19 countries that are in dire need of aid namely: 'Angola', 'Benin', 'Burkina Faso', 'Cameroon', 'Central African Republic', 'Chad', 'Congo Dem. Rep.', "Cote d'Ivoire", 'Equatorial Guinea', 'Guinea', 'Guinea-Bissau', 'Haiti', 'Lesotho', 'Mali', 'Mauritania', 'Mozambique', 'Niger', 'Nigeria', 'Sierra Leone'
+## **2. Background**  
+HELP International, a global NGO, seeks to **identify countries most in need** of economic and health-related aid. Key challenges include:  
 
-## Results
-The clustering results provide a clear direction for the CEO of HELP International to allocate resources strategically and effectively, significantly enhancing the impact of their humanitarian efforts.
+🔹 **Unequal Resource Distribution** – Aid must be **strategically allocated** to maximize impact.  
+🔹 **Complex Socio-Economic Indicators** – Multiple **factors affect country development**, requiring advanced analytics.  
+🔹 **Data-Driven Decision Making** – Clustering helps **categorize countries based on similar needs**.  
 
-## Acknowledgments
-- HELP International for their commitment to humanitarian efforts.
-- Kaggle for providing the dataset.
+This project addresses these challenges by:  
+
+✅ **Applying clustering techniques** to group similar countries.  
+✅ **Reducing dimensionality using PCA** for meaningful pattern identification.  
+✅ **Identifying high-risk countries** requiring urgent aid intervention.  
+
+---
+
+## **3. Data Collection and Processing**  
+### **📂 Dataset**  
+The dataset, sourced from **[Kaggle](https://www.kaggle.com/)**, provides **socio-economic and health metrics** across various countries.  
+
+| Feature | Description |
+|---------|------------|
+| `country` | Name of the country |
+| `child_mort` | Death rate of children under 5 years per 1,000 live births |
+| `exports` | Exports of goods and services as a percentage of GDP per capita |
+| `health` | Total health spending per capita as a percentage of GDP |
+| `imports` | Imports of goods and services as a percentage of GDP per capita |
+| `income` | Net income per person |
+| `inflation` | Annual GDP growth rate |
+| `life_expec` | Average lifespan of a newborn based on mortality patterns |
+| `total_fer` | Number of children per woman |
+| `gdpp` | GDP per capita |
+
+### **🛠️ Data Preprocessing Steps**  
+✅ **Applied log transformation** to normalize skewed features.  
+✅ **Checked for missing values** and handled inconsistencies.  
+✅ **Standardized numerical variables** for optimal model performance.  
+
+---
+
+## **4. Exploratory Data Analysis (EDA)**  
+📊 **Correlation Heatmap**  
+- **Analyzed relationships between economic indicators and development needs.**  
+
+📈 **GDP & Child Mortality Trends**  
+- **Identified inverse relationships between GDP per capita and child mortality rates.**  
+
+📉 **Impact of Healthcare on Life Expectancy**  
+- **Visualized how health spending correlates with increased life expectancy.**  
+
+---
+
+## **5. Model Development**  
+### **📌 Machine Learning Techniques Used**  
+- **Principal Component Analysis (PCA)** – **Reduced dimensionality** while preserving 95% variance.  
+- **KMeans Clustering** – **Segmented countries** into distinct groups based on development indicators.  
+
+### **🛠 Model Training Process**  
+✅ **Applied PCA to reduce feature complexity.**  
+✅ **Determined optimal clusters using Elbow Method & Silhouette Score.**  
+✅ **Trained KMeans to categorize countries based on similar socio-economic traits.**  
+
+---
+
+## **6. Model Evaluation & Results**  
+📊 **Performance Metrics:**  
+✅ **Silhouette Score** – Measures cluster cohesion and separation.  
+✅ **Davies-Bouldin Index** – Evaluates cluster compactness and separation.  
+
+📉 **Key Findings:**  
+- **Identified 19 countries in dire need of aid**, including:  
+  **Angola, Benin, Burkina Faso, Cameroon, Central African Republic, Chad, DR Congo, Côte d'Ivoire, Guinea, Haiti, Lesotho, Mali, Mozambique, Niger, Nigeria, Sierra Leone, and more.**  
+- **Countries with high child mortality and low GDP per capita were prioritized for aid allocation.**  
+
+---
+
+## **7. Visualizing the Results**  
+📊 **Cluster Visualization**  
+- **Scatter plots & bar charts** illustrated country groupings based on economic indicators.  
+
+📈 **Heatmaps & PCA Explained Variance**  
+- **Visualized the importance of each socio-economic feature in clustering.**  
+
+📉 **Top Countries Needing Aid**  
+- **Tables & reports showcased the most vulnerable nations for targeted intervention.**  
+
+---
+
+## **8. Future Work**  
++ 🔹 Incorporate **additional socio-political factors** like conflict levels and corruption indexes.  
++ 🔹 Use **hierarchical clustering** for deeper insights into development patterns.  
++ 🔹 Develop an **interactive dashboard** for real-time country analysis.  
++ 🔹 Apply **time-series forecasting** to predict economic changes over time.  
+
+---
+
+## **9. Technologies Used**  
++ 🔹 Programming: Python  
++ 🔹 Machine Learning: Scikit-learn, KMeans Clustering, PCA  
++ 🔹 Data Processing: Pandas, NumPy  
++ 🔹 Data Visualization: Seaborn, Matplotlib  
++ 🔹 Model Evaluation: Silhouette Score, Davies-Bouldin Index  
+
+---
+
+## **10. Connect With Me**  
+💼 **LinkedIn:** [Uvietobore Joshua Adjugah](https://www.linkedin.com/in/uvietobore-joshua-adjugah-2b548621a)  
+📧 **Email:** uviejosh@gmail.com  
+
+🚀 **Star this repo if you find it useful!** ⭐  
